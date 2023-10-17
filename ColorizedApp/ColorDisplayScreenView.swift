@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct ColorDisplayScreenView: View {
+    let redTint: Double
+    let greenTint: Double
+    let blueTint: Double
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Rectangle()
+            .frame(height: 170)
+            .cornerRadius(20)
+            .foregroundColor(
+                Color(
+                    red: redTint / 255,
+                    green: greenTint / 255,
+                    blue: blueTint / 255
+                )
+            )
+            .shadow(color: .black, radius: 6, x: 0.0, y: 0.0)
     }
 }
 
 #Preview {
-    ColorDisplayScreenView()
+    ColorDisplayScreenView(redTint: 255, greenTint: 255, blueTint: 255)
 }
